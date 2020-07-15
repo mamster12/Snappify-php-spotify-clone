@@ -1,22 +1,20 @@
-<?php 
-    include("includes/config.php");
-    
-    session_destroy();
-    if(isset($_SESSION['userLoggedIn'])){
-        $userLoggedIn = $_SESSION['userLoggedIn'];
-    } else {
-        header("Location: register.php");
-    }
-?>
+<?php include("includes/header.php");?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Snappify</title>
-</head>
-<body>
-    <h1>Hello World!</h1>
-</body>
-</html>
+    <h1 class="page-heading-big">You Might Also Like</h1>
+
+    <div class="grid-view-container">
+        <?php 
+            $albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 10");
+
+            while($row = mysqli_fetch_array($albumQuery)) {
+                echo "<div class='grid-view-item'>
+                    <a href='album.php?id=". $row['id'] ."'>
+                        <img src='". $row['artworkPath'] ."'>
+                        <div class='grid-view-info'>". $row['title'] .
+                        "</div>
+                    </a>
+                </div>";
+            }
+        ?>
+    </div>
+<?php include("includes/footer.php");?>

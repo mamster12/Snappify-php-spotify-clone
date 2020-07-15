@@ -1,0 +1,369 @@
+/*---------- */
+/*BASIC SETUP*/
+/*---------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+body {
+  background-color: #181818;
+  font-size: 14px;
+  min-width: 720px;
+}
+
+#now-playing-bar-container {
+  width: 100%;
+  background-color: #202020;
+  bottom: 0;
+  position: fixed;
+  min-width: 620px;
+}
+
+#now-playing-bar {
+  display: flex;
+  height: 90px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+#now-playing-left,
+#now-playing-right {
+  width: 30%;
+  min-width: 180px;
+}
+
+#now-playing-right {
+  position: relative;
+  margin-top: 16px;
+}
+
+#now-playing-center {
+  width: 40%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#now-playing-bar .content {
+  width: 100%;
+  height: 57px;
+}
+
+.player-controls .buttons {
+  margin: 0 auto;
+  display: table;
+}
+
+.control-button {
+  background-color: transparent;
+  border: none;
+  vertical-align: middle;
+}
+
+.control-button img {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+.control-button.play img,
+.control-button.pause img {
+  width: 32px;
+  height: 32px;
+}
+
+.control-button:hover {
+  cursor: pointer;
+}
+
+.progress-time {
+  color: #a0a0a0;
+  font-size: 11px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.playback-bar {
+  display: flex;
+}
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.progress-bar-bg {
+  background-color: #404040;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.progress {
+  background-color: #a0a0a0;
+  height: 4px;
+  width: 0%;
+  border-radius: 2px;
+}
+
+.playback-bar .progress-bar {
+  margin-top: 3px;
+}
+
+#now-playing-left .album-artwork {
+  width: 100%;
+  max-width: 57px;
+  margin-right: 15px;
+  float: left;
+  background-size: cover;
+}
+
+#now-playing-left .track-info {
+  display: table;
+}
+
+#now-playing-left .track-info .track-name {
+  margin: 6px 0;
+  display: inline-block;
+  width: 100%;
+}
+
+#now-playing-left .track-info .artist-name span {
+  font-size: 12px;
+  color: #a0a0a0;
+}
+
+.volume-bar {
+  width: 180px;
+  position: absolute;
+  right: 0;
+}
+
+.volume-bar .progress-bar {
+  width: 125px;
+}
+
+#top-container {
+  min-height: 100%;
+  width: 100%;
+}
+
+#navbar-container {
+  background-color: #000;
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+}
+
+.navbar .group {
+  border-top: 1px solid #a0a0a0;
+  padding: 10px 0;
+}
+
+.logo {
+  margin-bottom: 15px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-item {
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 700;
+  display: block;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.nav-item-link {
+  color: #a0a0a0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-item-link:hover {
+  color: #fff;
+}
+
+.nav-item-link .icon {
+  position: absolute;
+  right: 0;
+  top: 6px;
+  width: 25px;
+}
+
+#main-view-container {
+  margin-left: 220px;
+  padding-bottom: 90px;
+  width: calc(100% - 220px);
+}
+
+#main-content {
+  padding: 0 20px;
+}
+
+.page-heading-big {
+  padding: 20px;
+  text-align: center;
+}
+
+.grid-view-item {
+  display: inline-block;
+  margin-right: 20px;
+  width: 29%;
+  max-width: 200px;
+  min-width: 150px;
+  margin-bottom: 20px;
+}
+
+.grid-view-item img {
+  width: 100%;
+}
+
+.grid-view-info {
+  font-weight: 300;
+  text-align: center;
+  padding: 5px 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.grid-view-item a {
+  text-decoration: none;
+}
+
+.entity-info {
+  padding: 40px 0 10px 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.entity-info .left-section {
+  width: 30%;
+  float: left;
+  max-width: 250px;
+}
+
+.entity-info .left-section img {
+  width: 100%;
+}
+
+.entity-info .right-section {
+  width: 70%;
+  float: left;
+  padding: 5px 10px 5px 40px;
+  box-sizing: border-box;
+}
+
+.entity-info .right-section h2 {
+  margin-top: 0px;
+}
+
+.entity-info .right-section p {
+  color: #939393;
+  font-weight: 200;
+  padding: 5px 0;
+}
+
+.track-list {
+  padding: 0;
+}
+
+.tracklist-row {
+  height: 37px;
+  padding: 15px 10px;
+  list-style: none;
+  box-sizing: content-box;
+  transition: background-color 0.2s ease;
+}
+
+.tracklist-row span {
+  color: #939393;
+  font-weight: 200;
+}
+
+.tracklist-row:hover {
+  background-color: #282828;
+}
+
+.tracklist-row .track-count {
+  width: 8%;
+  float: left;
+}
+
+.tracklist-row .track-count img {
+  width: 20px;
+  visibility: hidden;
+  position: absolute;
+  cursor: pointer;
+  /* transition: visibility 0.2s ease; */
+}
+
+.tracklist-row:hover .track-count img {
+  visibility: visible;
+}
+
+.tracklist-row .track-count span {
+  visibility: visible;
+}
+
+.tracklist-row:hover .track-count span {
+  visibility: hidden;
+}
+
+.tracklist-row .track-info {
+  width: 75%;
+  float: left;
+}
+
+.tracklist-row .track-info span {
+  display: block;
+}
+
+.tracklist-row .track-options {
+  width: 5%;
+  float: left;
+  text-align: right;
+}
+
+.tracklist-row .track-options img {
+  width: 15px;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.tracklist-row:hover .track-options img {
+  visibility: visible;
+}
+
+.tracklist-row .track-duration {
+  width: 12%;
+  float: left;
+  text-align: right;
+}
+
+.tracklist-row .track-info .track-name {
+  color: #fff;
+  margin-bottom: 7px;
+}
