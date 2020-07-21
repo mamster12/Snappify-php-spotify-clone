@@ -6,7 +6,7 @@
 
     // $con = mysqli_connect("localhost", "root", "password54321", "snappify"); local cpnfig
 
-    $con = mysqli_connect("us-cdbr-east-02.cleardb.com", "b93d1dc45b524a", "616a41d3", "heroku_4316f72bdb520f2");
+    $con = mysqli_connect(DATABASE, ROOT_USER, ROOT_PASS, DB_NAME);
 
     if(mysqli_connect_errno()){
         echo "Failed to connect: ". mysqli_connect_errno();
