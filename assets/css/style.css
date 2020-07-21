@@ -367,3 +367,178 @@ body {
   color: #fff;
   margin-bottom: 7px;
 }
+
+.artist-info {
+  text-align: center;
+}
+
+h1.artist-name {
+  padding: 0 0 10px 0;
+}
+
+.button {
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: transparent;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border: 2px solid #fff;
+  border-radius: 500px;
+  padding: 15px;
+  min-width: 130px;
+}
+
+.button.green {
+  background-color: #2ebd59;
+  border-color: #2ebd59;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #939393;
+  margin-bottom: 20px;
+}
+
+.artist-page-headings,
+.yourmusic-page-headings {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+[role='link'] {
+  cursor: pointer;
+}
+
+.search-container {
+  background-color: #242424;
+  padding: 20px 20px;
+  margin-bottom: 15px;
+}
+
+.search-container h4 {
+  margin: 0;
+  font-weight: 300;
+}
+
+.search-container .search-input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 62px;
+  letter-spacing: 2px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.search-result-row {
+  padding: 15px 10px;
+}
+
+.search-result-row:hover {
+  background-color: #282828;
+}
+
+.search-result-row .artist-name span {
+  color: #fff;
+}
+
+.no-results {
+  margin: 15px;
+  display: block;
+}
+
+.button-items .button {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.playlists-container {
+  padding: 10px 0;
+}
+
+.playlist-image {
+  border: 3px solid #282828;
+  padding: 10px;
+}
+
+.right-section h2 {
+  margin-bottom: 15px;
+}
+
+.entity-info .right-section .button {
+  margin-top: 15px;
+}
+
+.options-menu {
+  position: fixed;
+  background-color: #282828;
+  width: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  z-index: 1000;
+  display: none;
+}
+
+.options-menu .item {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-weight: 400;
+  color: rgba(147, 147, 147, 0.8);
+  cursor: pointer;
+  height: 40px;
+  background-color: #282828;
+  font-size: 14px;
+}
+
+.options-menu .item:hover {
+  color: #fff;
+  background-color: #333;
+  border-color: #333;
+}
+
+.options-menu select {
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.user-info h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-details {
+  padding: 20px;
+}
+
+.user-details .container h2 {
+  text-align: center;
+}
+
+.user-details .container input[type='text'],
+.user-details .container input[type='password'],
+.user-details .container button {
+  display: block;
+  margin: 16px auto;
+}
+
+.user-details .container input[type='text'],
+.user-details .container input[type='password'] {
+  height: 50px;
+  width: 100%;
+  background-color: #1f1f1f;
+  border: none;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 0 20px;
+}
+
+.user-details .container .message {
+  color: #2ebd59;
+  font-weight: 300;
+}

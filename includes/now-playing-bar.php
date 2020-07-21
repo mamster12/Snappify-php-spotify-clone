@@ -17,6 +17,19 @@
         setTrack(newPlaylist[0], newPlaylist, false);
         updateVolumeProgressBar(audioElement.audio);
 
+        $(document).keydown(function(e){
+            if (e.keyCode == 32) {
+                e.preventDefault();         
+                 // add your code here.
+                playbutton = !playbutton;
+                if(playbutton){
+                    playSong();
+                } else {
+                    pauseSong();
+                }      
+            }
+        });
+
         $("#now-playing-bar-container").on("mousedown touchstart mousemove touchmove", function(e) {
             e.preventDefault();
         });
@@ -163,12 +176,15 @@
             $.post("includes/handlers/ajax/getArtistJson.php", { artistId: track.artist }, function(data){
                 var artist = JSON.parse(data);
               
-                $(".artist-name span").text(artist.name);
+                $(".track-info .artist-name span").text(artist.name);
+                $(".track-info .artist-name span").attr("onclick", "openPage('artist.php?id=" + artist.id + "')");
             });
 
             $.post("includes/handlers/ajax/getAlbumJson.php", { albumId: track.album}, function(data){
                 var album = JSON.parse(data);
-                $(".album-link img").attr("src", album.artworkPath);
+                $(".content .album-link img").attr("src", album.artworkPath);
+                $(".content .album-link img").attr("onclick", "openPage('album.php?id=" + album.id + "')");
+                $(".track-info .track-name span").attr("onclick", "openPage('album.php?id=" + album.id + "')");
             });
 
             audioElement.setTrack(track);
@@ -185,6 +201,7 @@
     }
  
     function playSong() {
+        playbutton = true;
         if(audioElement.audio.currentTime == 0) {
             $.post("includes/handlers/ajax/updatePlays.php", { songId: audioElement.currentlyPlaying.id});
         };
@@ -194,6 +211,7 @@
     }
 
     function pauseSong() {
+        playbutton = false;
         $(".control-button.play").show();
         $(".control-button.pause").hide();
         audioElement.pause();
@@ -205,14 +223,14 @@
         <div id="now-playing-left">
             <div class="content">
                 <span class="album-link">
-                    <img src="" alt="dummy" class="album-artwork">
+                    <img role="link" tabIndex="0" src="" alt="dummy" class="album-artwork">
                 </span>
                 <div class="track-info">
                     <span class="track-name">
-                        <span></span>
+                        <span role="link" tabIndex="0"></span>
                     </span>
                     <span class="artist-name">
-                        <span></span>
+                        <span role="link" tabIndex="0"></span>
                     </span>                        
                 </div>
             </div>
