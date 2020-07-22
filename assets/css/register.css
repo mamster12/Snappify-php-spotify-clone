@@ -181,3 +181,16 @@ select:focus {
   font-size: 12px;
   display: block;
 }
+
+header nav a {
+  text-decoration: none;
+  font-family: 'Ubuntu', 'Arial', sans-serif;
+  color: #fff;
+  font-size: 30px;
+}
+
+img.main-logo {
+  width: 50px;
+  vertical-align: middle;
+  padding: 10px;
+}

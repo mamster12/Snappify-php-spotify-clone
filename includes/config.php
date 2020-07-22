@@ -10,6 +10,7 @@
     $dbName = getenv('DB_NAME');
 
     $con = mysqli_connect($database, $rootUser, $rootPass, $dbName);
+   
 
     if(mysqli_connect_errno()){
         echo "Failed to connect: ". mysqli_connect_errno();

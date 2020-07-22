@@ -17,7 +17,7 @@
         setTrack(newPlaylist[0], newPlaylist, false);
         updateVolumeProgressBar(audioElement.audio);
 
-        $(document).keydown(function(e){
+       /* $(document).keydown(function(e){
             if (e.keyCode == 32) {
                 e.preventDefault();         
                  // add your code here.
@@ -28,7 +28,7 @@
                     pauseSong();
                 }      
             }
-        });
+        }); for spacebar playing */ 
 
         $("#now-playing-bar-container").on("mousedown touchstart mousemove touchmove", function(e) {
             e.preventDefault();

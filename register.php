@@ -20,6 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Snappify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/register.css">
     <script
   src="https://code.jquery.com/jquery-3.5.1.js"
@@ -47,6 +48,11 @@
     ?>
 
     <div id="background">
+        <header> 
+            <nav>
+                <a href="register.php"><img class="main-logo" alt="logo" src="assets/images/logo/snappify_logo.png">Snappify.</a>
+            </nav>
+        </header>
         <div id="login-container">
             <div id="input-container">
                 <form id="login-form" action="register.php" method="POST">
